@@ -19,11 +19,16 @@ const App = () => {
     setItems(items => items.filter(item => item.id !== id))
   }
 
+  // Update item
+  const updateItem = id => {
+    setItems(items => items.map(item => item.id === id ? {...item, packed: !item.packed} : item)
+    )
+  }  
   return (
     <div className="app">
       <Logo />
       <Form  addItems={addItems}/>
-      <PackingList items={items} deleteItem={deleteItem}/>
+      <PackingList items={items} deleteItem={deleteItem} updateItem={updateItem}/>
       <Status />
     </div>
   );

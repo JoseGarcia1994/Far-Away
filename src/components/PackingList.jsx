@@ -1,6 +1,6 @@
 import Item from './Item.jsx';
 
-const PackingList = ({items, deleteItem}) => {
+const PackingList = ({items, deleteItem, updateItem}) => {
 
   return (
     <div className="list">
@@ -10,6 +10,7 @@ const PackingList = ({items, deleteItem}) => {
           key={item.id}
           item={item}
           deleteItem={deleteItem}
+          updateItem={updateItem}
           />
         ))}
       </ul>
