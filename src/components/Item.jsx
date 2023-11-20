@@ -1,11 +1,11 @@
 
-const Item = ({item}) => {
+const Item = ({item, deleteItem}) => {
   return (
     <li>
       <span style={item.packed ? {textDecoration: 'line-through'} : {}}>
         {item.num} {item.item}
       </span>
-      <button>❌</button>
+      <button onClick={() => deleteItem(item.id)}>❌</button>
     </li>
   );
 };

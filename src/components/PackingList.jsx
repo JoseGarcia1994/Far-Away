@@ -1,6 +1,6 @@
 import Item from './Item.jsx';
 
-const PackingList = ({items}) => {
+const PackingList = ({items, deleteItem}) => {
 
   return (
     <div className="list">
@@ -9,6 +9,7 @@ const PackingList = ({items}) => {
           <Item 
           key={item.id}
           item={item}
+          deleteItem={deleteItem}
           />
         ))}
       </ul>

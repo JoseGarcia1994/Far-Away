@@ -14,11 +14,16 @@ const App = () => {
     setItems((items) => [...items, item])
   }
 
+  // Delete item
+  const deleteItem = id => {
+    setItems(items => items.filter(item => item.id !== id))
+  }
+
   return (
     <div className="app">
       <Logo />
       <Form  addItems={addItems}/>
-      <PackingList items={items}/>
+      <PackingList items={items} deleteItem={deleteItem}/>
       <Status />
     </div>
   );
