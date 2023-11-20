@@ -1,10 +1,9 @@
-import React from 'react';
 
 const Item = ({item}) => {
   return (
     <li>
       <span style={item.packed ? {textDecoration: 'line-through'} : {}}>
-        {item.quantity} {item.description}
+        {item.num} {item.item}
       </span>
       <button>❌</button>
     </li>

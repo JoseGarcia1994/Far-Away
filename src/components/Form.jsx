@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = ({newItem}) => {
+const Form = ({addItems}) => {
 
   const [num, setNum] = useState(0);
   const [item, setItem] = useState("");
@@ -21,6 +21,9 @@ const Form = ({newItem}) => {
       packed: false,
       id: Date.now()
     }
+
+    //Add Item
+    addItems(newItem)
     
     // Reset form
     setItem("");
