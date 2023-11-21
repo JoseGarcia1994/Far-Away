@@ -1,3 +1,4 @@
+import ConfirmDeleteModal from './components/ConfirmDeleteModal.jsx';
 import Logo from './components/Logo';
 import Form from './components/Form';
 import PackingList from './components/PackingList.jsx';
@@ -8,6 +9,7 @@ import "./App.css";
 const App = () => {
 
   const [items, setItems] = useState([]);
+  const [clearModal, setClearModal] = useState(false);
 
   // Save new item when form is submitted
   const addItems = item => {
@@ -23,13 +25,20 @@ const App = () => {
   const updateItem = id => {
     setItems(items => items.map(item => item.id === id ? {...item, packed: !item.packed} : item)
     )
-  }  
+  }
+
+  // Empty entire list
+  const emptyList = () => {
+    setClearModal(true)
+  }
+
   return (
     <div className="app">
       <Logo />
       <Form  addItems={addItems}/>
-      <PackingList items={items} deleteItem={deleteItem} updateItem={updateItem}/>
+      <PackingList items={items} deleteItem={deleteItem} updateItem={updateItem} emptyList={emptyList}/>
       <Status items={items}/>
+      {clearModal && <ConfirmDeleteModal setItems={setItems} setClearModal={setClearModal}/>}
     </div>
   );
 };

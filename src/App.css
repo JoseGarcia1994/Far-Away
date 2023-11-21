@@ -129,3 +129,53 @@ input[type="checkbox"] {
   font-weight: 700;
   padding: 3.2rem 0;
 }
+
+/* ------------MODAL RESET */
+
+.reset__modal-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 100;
+}
+
+.reset__modal {
+  width: 300px;
+  height: 200px;
+  background-color: #f8f3f3;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.reset__modal-title {
+  width: 100vw;
+  padding: 0 20px;
+}
+
+.reset__modal-btn-no,
+.reset__modal-btn-yes {
+  width: 50px;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  padding: 10px;
+}
+
+.reset__modal-btn-no {
+  background-color: #DC2626;
+}
+
+.reset__modal-btn-yes {
+  background-color: #3b82F6;
+}
