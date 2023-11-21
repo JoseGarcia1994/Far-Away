@@ -29,7 +29,7 @@ const App = () => {
       <Logo />
       <Form  addItems={addItems}/>
       <PackingList items={items} deleteItem={deleteItem} updateItem={updateItem}/>
-      <Status />
+      <Status items={items}/>
     </div>
   );
 };
